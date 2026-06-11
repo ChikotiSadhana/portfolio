@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chikoti Sadhana | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --primary:#8b5cf6;
+    --secondary:#06b6d4;
+    --dark:#0f172a;
+    --card:#1e293b;
+    --text:#ffffff;
+    --gray:#94a3b8;
+}
+
+body{
+    background:var(--dark);
+    color:var(--text);
+}
+
+section{
+    padding:80px 10%;
+}
+
+h2{
+    font-size:2.5rem;
+    margin-bottom:30px;
+    text-align:center;
+}
+
+.highlight{
+    color:var(--primary);
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 28px;
+    background:var(--primary);
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 10%;
+    background:rgba(15,23,42,.95);
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+.logo{
+    font-size:1.5rem;
+    font-weight:700;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--primary);
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero-content h1{
+    font-size:4rem;
+}
+
+.hero-content h3{
+    font-size:1.8rem;
+    color:var(--secondary);
+    margin:10px 0;
+}
+
+.hero-content p{
+    max-width:700px;
+    margin:20px auto;
+    color:var(--gray);
+}
+
+.buttons{
+    margin-top:25px;
+}
+
+.buttons a{
+    margin:10px;
+}
+
+.about-content{
+    display:grid;
+    grid-template-columns:1fr 2fr;
+    gap:40px;
+    align-items:center;
+}
+
+.profile{
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:5rem;
+    font-weight:bold;
+    margin:auto;
+}
+
+.about-text{
+    color:var(--gray);
+    line-height:1.8;
+}
+
+.education-card,
+.project-card,
+.cert-card{
+    background:var(--card);
+    padding:25px;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.education-card:hover,
+.project-card:hover,
+.cert-card:hover{
+    transform:translateY(-5px);
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.skill{
+    background:var(--card);
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.bar{
+    width:100%;
+    background:#334155;
+    height:8px;
+    border-radius:20px;
+    margin-top:10px;
+}
+
+.progress{
+    height:8px;
+    border-radius:20px;
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin:15px 0;
+}
+
+.socials a{
+    color:white;
+    text-decoration:none;
+    margin:10px;
+    font-size:1.1rem;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    border-top:1px solid #334155;
+}
+
+.fade{
+    opacity:0;
+    transform:translateY(30px);
+    transition:1s;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@media(max-width:768px){
+
+    .hero-content h1{
+        font-size:2.8rem;
+    }
+
+    .about-content{
+        grid-template-columns:1fr;
+    }
+
+    nav{
+        display:none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Sadhana</div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certificates</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Hi, I'm <span class="highlight">Chikoti Sadhana</span></h1>
+
+        <h3 id="typing"></h3>
+
+        <p>
+            Information Technology student passionate about Frontend Development,
+            Problem Solving, AI Applications and building impactful web solutions.
+        </p>
+
+        <div class="buttons">
+            <a href="#" class="btn">Download Resume</a>
+            <a href="#contact" class="btn">Contact Me</a>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="fade">
+    <h2>About Me</h2>
+
+    <div class="about-content">
+
+        <div class="profile">
+            CS
+        </div>
+
+        <div class="about-text">
+            I am a B.Tech Information Technology student at BV Raju Institute of Technology
+            with a CGPA of 8.98. I enjoy building user-friendly websites and learning new
+            technologies. My interests include frontend development, AI-powered applications,
+            web development, and problem solving using C++.
+
+            <br><br>
+
+            I am enthusiastic about contributing to impactful projects while continuously
+            improving my technical and professional skills.
+        </div>
+
+    </div>
+</section>
+
+<section id="education" class="fade">
+
+    <h2>Education</h2>
+
+    <div class="grid">
+
+        <div class="education-card">
+            <h3>B.Tech - Information Technology</h3>
+            <p>BV Raju Institute of Technology</p>
+            <p>2023 - 2027</p>
+            <h4>CGPA: 8.92</h4>
+        </div>
+
+        <div class="education-card">
+            <h3>Intermediate</h3>
+            <p>Sri Vasishta Junior College</p>
+            <p>2021 - 2023</p>
+            <h4>98.5%</h4>
+        </div>
+
+        <div class="education-card">
+            <h3>Schooling</h3>
+            <p>Vikas High School</p>
+            <p>2021</p>
+            <h4>10 GPA</h4>
+        </div>
+
+    </div>
+</section>
+
+<section id="skills" class="fade">
+
+    <h2>Technical Skills</h2>
+
+    <div class="skills">
+
+        <div class="skill">
+            HTML
+            <div class="bar"><div class="progress" style="width:80%"></div></div>
+        </div>
+
+        <div class="skill">
+            CSS
+            <div class="bar"><div class="progress" style="width:70%"></div></div>
+        </div>
+
+        <div class="skill">
+            C++
+            <div class="bar"><div class="progress" style="width:80%"></div></div>
+        </div>
+
+        <div class="skill">
+            SQL
+            <div class="bar"><div class="progress" style="width:60%"></div></div>
+        </div>
+
+        <div class="skill">
+            GitHub
+            <div class="bar"><div class="progress" style="width:55%"></div></div>
+        </div>
+
+        <div class="skill">
+            VS Code
+            <div class="bar"><div class="progress" style="width:73%"></div></div>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="projects" class="fade">
+
+    <h2>Projects</h2>
+
+    <div class="grid">
+
+        <div class="project-card">
+            <h3>Traditional Artists Marketplace</h3>
+            <p>
+                A web platform that helps traditional artists connect directly
+                with customers and sell their handmade products.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>Explainable Intrusion Detection System</h3>
+            <p>
+                AI-powered real-time network monitoring system with explainable
+                predictions to enhance trust and security.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>Air Quality Index Website</h3>
+            <p>
+                Sustainability-themed website displaying AQI information and
+                pollution reduction tasks.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>Saarthi AI</h3>
+            <p>
+                AI-based internship recommendation platform with resume generation
+                and personalized career guidance.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="certifications" class="fade">
+
+    <h2>Achievements & Certifications</h2>
+
+    <div class="grid">
+
+        <div class="cert-card">
+            SAWIT.AI Learnathon
+        </div>
+
+        <div class="cert-card">
+            Promethean Design Dynamo
+        </div>
+
+        <div class="cert-card">
+            GitHub Workshop 2025
+        </div>
+
+        <div class="cert-card">
+            Hack Finiti 2025
+        </div>
+
+        <div class="cert-card">
+            Smart India Hackathon
+        </div>
+
+        <div class="cert-card">
+            Smart Interviews DSA Certification
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact" class="contact fade">
+
+    <h2>Contact Me</h2>
+
+    <p>📧 23211a1231@bvrit.ac.in</p>
+    <p>📱 7013262616</p>
+
+    <div class="socials">
+        <a href="https://github.com/ChikotiSadhana" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/chikoti-sadhana-a11289323" target="_blank">LinkedIn</a>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Chikoti Sadhana | Portfolio
+</footer>
+
+<script>
+
+const roles = [
+    "Frontend Developer",
+    "Problem Solver",
+    "Tech Enthusiast",
+    "B.Tech IT Student"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+
+const typing = document.getElementById("typing");
+
+function typeEffect(){
+
+    if(charIndex < roles[roleIndex].length){
+        typing.textContent += roles[roleIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeEffect,100);
+    }
+    else{
+        setTimeout(eraseEffect,1500);
+    }
+}
+
+function eraseEffect(){
+
+    if(charIndex > 0){
+        typing.textContent =
+        roles[roleIndex].substring(0,charIndex-1);
+
+        charIndex--;
+
+        setTimeout(eraseEffect,50);
+    }
+    else{
+        roleIndex = (roleIndex + 1) % roles.length;
+        setTimeout(typeEffect,300);
+    }
+}
+
+typeEffect();
+
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+document.querySelectorAll(".fade").forEach(el=>{
+    observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
